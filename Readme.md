@@ -7,8 +7,12 @@
 1. [Queries](#queries)
 1. [Triggers](#triggers)
 1. [Show Command](#show-command)
+1. [Locking](#locking)
+1. [Aggrigate Functions](#aggrigate-functions)
+1. [Regular Expressions](#regular-expressions)
+1. [MySQL Constraints](#mysql-constraints)
 1. [Others](#others)
-1. [Link to Header](#queries)
+1. [MySQL Constraints](#queries)
 
 ## Database Manipulation
 
@@ -195,6 +199,66 @@ SHOW STATUS;
 ``` sql
 SHOW PRIVILEGES;
 ```
+
+## Locking
+For InnoDB Engine
+### Table Locking
+``` sql
+LOCK TABLES tab_name1 [READ | WRITE],   
+            tab_name2 [READ | WRITE],
+            ...... ;  
+```
+### Unlock Tables
+``` sql
+UNLOCK TABLES;  
+```
+
+## Aggrigate Functions
+
+| Aggregate Function |	Descriptions |
+| ------------------ | ------------- |
+| `count()` |	Returns the number of rows, including rows with NULL values in a group. |
+| `sum()` |	Returns the total summed values (Non-NULL) in a set. |
+| `average()` |	Returns the average value of an expression. |
+| `min()` |	Returns the minimum value in a set. |
+| `max()` |	Returns the maximum value in a set. |
+| `groutp_concat()` |	Returns a concatenated string. |
+| `first()` |	Returns the first value of an expression. |
+| `last()` |	Returns the last value of an expression. |
+
+
+## Regular Expressions
+
+| Pattern |	Match |
+| ------- | ----- |
+| `^` |	Beginning of string |
+| `$` |	End of string |
+| `.` |	Any single character |
+| `[...]` |	Any character listed between the square brackets |
+| `[^...]` |	Any character not listed between the square brackets |
+| `p1\|p2\|p3` |	Alternation; matches any of the patterns p1, p2, or p3 |
+| `*` |	Zero or more instances of preceding element |
+| `+` |	One or more instances of preceding element |
+| `{n}` |	n instances of preceding element |
+| `{m,n}` |	m through n instances of preceding element |
+| `[abc]` |	Any character listed between the square brackets |
+| `[^abc]` |	Any character not listed between the square brackets |
+| `[A-Z]` |	match any upper case letter. |
+| `[a-z]` |	match any lower case letter |
+| `[0-9]` |	match any digit from 0 through to 9. |
+| `?` |	Match zero or one instances of the strings preceding it. |
+
+## MySQL Constraints
+| Constraint | Description |
+| ---------- | ----------- |
+| `NOT NULL` | Ensures that a column cannot have a NULL value |
+| `UNIQUE` | Ensures that all values in a column are different |
+| `PRIMARY KEY` | A combination of a NOT NULL and UNIQUE. Uniquely identifies | each row in a table |
+| `FOREIGN KEY` | Prevents actions that would destroy links between tables |
+| `CHECK` | Ensures that the values in a column satisfies a specific condition |
+| `DEFAULT` | Sets a default value for a column if no value is specified |
+| `CREATE INDEX` | Used to create and retrieve data from the database very quickly |
+| `AUTO_INCREMENT` | Automatically generates a unique number when inserting a new record. |
 
 ## Others
 

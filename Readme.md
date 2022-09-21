@@ -8,11 +8,12 @@
 1. [Triggers](#triggers)
 1. [Show Command](#show-command)
 1. [Locking](#locking)
+1. [Join Operations](#join-operations)
 1. [Aggrigate Functions](#aggrigate-functions)
 1. [Regular Expressions](#regular-expressions)
 1. [MySQL Constraints](#mysql-constraints)
+1. [User Manipulation](#user-manipulation)
 1. [Others](#others)
-1. [MySQL Constraints](#queries)
 
 ## Database Manipulation
 
@@ -212,6 +213,20 @@ LOCK TABLES tab_name1 [READ | WRITE],
 ``` sql
 UNLOCK TABLES;  
 ```
+
+## Join Operations
+```sql
+SELECT table1.field1, table2.field1, table1.field2
+    FROM table1
+    [INNER JOIN / LEFT JOIN / RIGHT JOIN / CROSS JOIN] table2 
+        ON table1.fieldM=table2.fieldN;
+```
+| Type | Description |
+| --- | --- |
+| `INNER JOIN` | Returns records that have matching values in both tables |
+| `LEFT JOIN` | Returns all records from the left table, and the matched records from the right table |
+| `RIGHT JOIN` | Returns all records from the right table, and the matched records from the left table |
+| `CROSS JOIN` | Returns all records from both tables |
 
 ## Aggrigate Functions
 

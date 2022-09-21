@@ -260,6 +260,36 @@ UNLOCK TABLES;
 | `CREATE INDEX` | Used to create and retrieve data from the database very quickly |
 | `AUTO_INCREMENT` | Automatically generates a unique number when inserting a new record. |
 
+## User Manipulation
+### Create User
+```sql
+CREATE USER 'uname'@'hostname' IDENTIFIED BY 'password';
+```
+### Grant Permission to User
+```sql
+GRANT [ALL / privilage_list] on database_name.table_name TO 'uname'@'hostname' [WITH GRANT OPTION];
+```
+
+### Flush
+```sql
+FLUSH PRIVILEGES;
+```
+
+### Revoke Permission from User
+```sql
+REVOKE type_of_permission ON database_name.table_name FROM 'uname'@'hostname';
+```
+
+### Show Granted Permission to User
+```sql
+SHOW GRANTS FOR 'uname'@'hostname';
+```
+
+### Delete User
+```sql
+DROP USER 'uname'@'hostname';
+```
+
 ## Others
 
 ### Connection ID
